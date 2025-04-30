@@ -4,7 +4,21 @@
 To solve the N-Queen problem using backtracking, which places N queens on an N*N chessboard such that no two queens threaten each other.
 
 ## Algorithm
-
+1. Input Handling: Takes the board size as input and stores it in the global variable N.
+2. printSolution(board): Prints the current configuration of the board if a solution is found.
+3. isSafe(board, row, col):
+   - Checks if a queen can be placed on board[row][col]:
+   - Checks the left side of the current row.
+   - Checks the upper diagonal on the left side.
+   - Checks the lower diagonal on the left side.
+4. solveNQUtil(board, col):
+   - Tries placing a queen in all rows of the current column.
+   - If a position is safe, it places the queen and recursively solves the rest of the board.
+   - If placing leads to a solution, it returns True; otherwise, it backtracks.
+5. solveNQ():
+   - Initializes a 4×4 board.
+   - Calls the recursive utility function.
+   - Prints the solution or failure message.
 ## Program:
 ```
 /*
